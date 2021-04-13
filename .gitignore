@@ -1,0 +1,30 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/Arrays Extra Oefeningen/.vs/Arrays Extra Oefeningen
+/Arrays Extra Oefeningen/Arrays Extra Oefeningen/bin/Debug/net5.0
+/Arrays Extra Oefeningen/Arrays Extra Oefeningen/obj
+/Arrays Extra Oefeningen/Caesar-encryptie/bin/Debug/net5.0
+/Arrays Extra Oefeningen/Caesar-encryptie/obj
+/Arrays Extra Oefeningen/Voetbalcoach/obj
+/Arrays Oefeningen/.vs/Arrays Oefeningen
+/Arrays Oefeningen/Array oefener 1/bin/Debug/net5.0
+/Arrays Oefeningen/Array oefener 1/obj
+/Arrays Oefeningen/Array oefener 2/bin/Debug/net5.0
+/Arrays Oefeningen/Array oefener 2/obj
+/Arrays Oefeningen/Array Zoeker/bin/Debug/net5.0
+/Arrays Oefeningen/Array Zoeker/obj
+/Arrays Oefeningen/Arrays Oefeningen/bin/Debug/net5.0
+/Arrays Oefeningen/Arrays Oefeningen/obj
+/Arrays Oefeningen/Bob/bin/Debug/net5.0
+/Arrays Oefeningen/Bob/obj
+/Arrays Oefeningen/Hamming distance/bin/Debug/net5.0
+/Arrays Oefeningen/Hamming distance/obj
+/Arrays Oefeningen/Leveringsbedrijf/bin/Debug/net5.0
+/Arrays Oefeningen/Leveringsbedrijf/obj
+/Arrays Oefeningen/Paswoord generator/bin/Debug/net5.0
+/Arrays Oefeningen/Paswoord generator/obj
+/Arrays Oefeningen/Vraag array/bin/Debug/net5.0
+/Arrays Oefeningen/Vraag array/obj
