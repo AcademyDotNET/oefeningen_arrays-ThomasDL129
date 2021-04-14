@@ -1,6 +1,5 @@
 ﻿using System;
 
-//TO DO: Decrypt werkt niet
 
 namespace Caesar_encryptie
 {
