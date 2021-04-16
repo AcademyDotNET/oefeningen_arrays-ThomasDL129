@@ -6,7 +6,7 @@ namespace Galgje
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Voer een woord in om the raden (Laat het niet zien aan de speler(s):");
+            Console.WriteLine("Voer een woord in om te raden (Laat het niet zien aan de speler(s):");
             string input = StringCleaner();
 
             HangmanMain(input);
@@ -41,7 +41,15 @@ namespace Galgje
             if (errors == 10)
             {
                 Console.WriteLine($"Verloren. Het woord was {input}");
+                PrintHangMan(errors);
+                Console.SetCursorPosition(0, 10);
             }
+            else
+            {
+                Console.WriteLine($"Gewonnen!. Het woord was inderdaad {input}");
+            }
+
+            Console.ReadLine();
         }
 
         private static char InputLetter()
@@ -60,7 +68,7 @@ namespace Galgje
         private static bool CheckLetter(char[] word, bool[] visibleLetters, char c)
         {
             int index = Array.IndexOf(word, c);
-            if(index != -1)
+            if (index != -1)
             {
                 visibleLetters[index] = true;
                 return true;
@@ -69,13 +77,13 @@ namespace Galgje
             {
                 return false;
             }
-            
+
         }
 
         private static void PrintWord(bool[] visibleLetters, char[] word)
         {
             Console.WriteLine("Woord:\n");
-            for(int i = 0; i < visibleLetters.Length; i++)
+            for (int i = 0; i < visibleLetters.Length; i++)
             {
                 if (!visibleLetters[i])
                 {
@@ -94,9 +102,9 @@ namespace Galgje
             string clean = string.Empty;
             string input = Console.ReadLine().ToUpper();
 
-            foreach(char element in input)
+            foreach (char element in input)
             {
-                if(element >= 'A' && element <= 'Z' && element != ' ')
+                if (element >= 'A' && element <= 'Z' && element != ' ')
                 {
                     clean += element.ToString();
                 }
@@ -106,69 +114,27 @@ namespace Galgje
         }
         private static void PrintHangMan(int errors)
         {
-            string[,] hangman = { { "     ",
-                                    "|    ",
-                                    "|    ",
-                                    "|    ",
-                                    "|    ",
-                                    "|_ _ " },
-                                  { "____ ",
-                                    "|    ",
-                                    "|    ",
-                                    "|    ",
-                                    "|    ",
-                                    "|_ _ " },
-                                  { "____ ",
-                                    "|/   ",
-                                    "|    ",
-                                    "|    ",
-                                    "|    ",
-                                    "|_ _ " },
-                                  { "____ ",
-                                    "|/ | ",
-                                    "|    ",
-                                    "|    ",
-                                    "|    ",
-                                    "|_ _ " },
-                                  { "____",
-                                    "|/ |",
-                                    "|  O",
-                                    "|   ",
-                                    "|   ",
-                                    "|_ _" },
-                                  { "____ ",
-                                    "|/ | ",
-                                    "|  O ",
-                                    "|  | ",
-                                    "|    ",
-                                    "|_ _ " },
-                                  { "____ ",
-                                    "|/ | ",
-                                    "|  O ",
-                                    "| /| ",
-                                    "|    ",
-                                    "|_ _ " },
-                                  { "____ ",
-                                    "|/ | ",
-                                    "|  O ",
-                                    "| /|\\",
-                                    "|    ",
-                                    "|_ _ " },
-                                  { "____ ",
-                                    "|/ | ",
-                                    "|  O ",
-                                    "| /|\\",
-                                    "| /  ",
-                                    "|_ _ " },
-                                  { "____ ",
-                                    "|/ | ",
-                                    "|  O ",
-                                    "| /|\\",
-                                    "| / \\ ",
-                                    "|_ _ " }
+            string[,] hangman = { { "     ", "|    ", "|    ", "|    ", "|    ", "|_ _ " },
+                                  { "____ ", "|    ", "|    ", "|    ", "|    ", "|_ _ " },
+                                  { "____ ", "|/   ", "|    ", "|    ", "|    ", "|_ _ " },
+                                  { "____ ", "|/ | ", "|    ", "|    ", "|    ", "|_ _ " },
+                                  { "____ ", "|/ | ", "|  O ", "|    ", "|    ", "|_ _ " },
+                                  { "____ ", "|/ | ", "|  O ", "|  | ", "|    ", "|_ _ " },
+                                  { "____ ", "|/ | ", "|  O ", "| /| ", "|    ", "|_ _ " },
+                                  { "____ ", "|/ | ", "|  O ", "| /|\\", "|    ", "|_ _ " },
+                                  { "____ ", "|/ | ", "|  O ", "| /|\\", "| /  ", "|_ _ " },
+                                  { "____ ", "|/ | ", "|  O ", "| /|\\", "| / \\ ", "|_ _ " }
             };
 
-
+            if (errors != 0)
+            {
+                for (int i = 0; i < hangman.GetLength(1); i++)
+                {
+                    Console.SetCursorPosition(30, 2 + i);
+                    Console.Write(hangman[errors - 1, i]);
+                }
+                Console.SetCursorPosition(0,5);
+            }
         }
     }
 }
