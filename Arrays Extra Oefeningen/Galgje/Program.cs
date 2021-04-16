@@ -21,7 +21,11 @@ namespace Galgje
             {
                 Console.Clear();
                 PrintWord(visibleLetters, word);
-                PrintHangMan(errors);
+
+                if(errors != 0)
+                {
+                    PrintHangMan(errors);
+                }
 
                 char c = InputLetter();
                 bool letterFound = CheckLetter(word, visibleLetters, c);
@@ -31,7 +35,7 @@ namespace Galgje
                     errors++;
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine($"De letter {c} komt niet voor.");
-                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.ResetColor();
                     Console.ReadLine();
                 }
 
@@ -46,7 +50,9 @@ namespace Galgje
             }
             else
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine($"Gewonnen!. Het woord was inderdaad {input}");
+                Console.ResetColor();
             }
 
             Console.ReadLine();
@@ -55,7 +61,7 @@ namespace Galgje
         private static char InputLetter()
         {
             char c;
-            bool validInput = false;
+            bool validInput;
             do
             {
                 Console.WriteLine("Geef een letter:");
