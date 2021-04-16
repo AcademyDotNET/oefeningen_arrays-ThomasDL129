@@ -50,8 +50,10 @@ namespace Galgje
             }
             else
             {
+                PrintWord(visibleLetters, word);
+                PrintHangMan(errors);
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"Gewonnen!. Het woord was inderdaad {input}");
+                Console.WriteLine($"\nGewonnen!. Het woord was inderdaad {input}");
                 Console.ResetColor();
             }
 
